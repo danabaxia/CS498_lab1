@@ -44,7 +44,7 @@ def ObstacleAvoidance():
             time.sleep(1)
             print("too close, backward")
             continue
-        elif scanList[3:7] != [2,2,2,2]:
+        elif scanList[4:6] != [2,2]:
             StopAndPickNewDirection(scanList)
             power = 0
         
