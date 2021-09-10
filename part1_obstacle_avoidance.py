@@ -40,8 +40,8 @@ def ObstacleAvoidance():
 
         print(scanList)
         if scanList.count(0) > 0:
-            fc.backward(20)
-            time.sleep(0.5)
+            fc.backward(50)
+            time.sleep(1)
             print("too close, backward")
             continue
         elif scanList[3:7] != [2,2,2,2]:
