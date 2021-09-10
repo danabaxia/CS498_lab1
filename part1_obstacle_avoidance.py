@@ -6,15 +6,22 @@ import asyncio
 import time
 import random
 
-def StopAndPickNewDirection():
+def StopAndPickNewDirection(scan_list):
     fc.stop()
     fc.backward(20)
     time.sleep(0.3)
-    turnRight = random.randint(0,1)
-    if(turnRight):
-        fc.turn_right(50)
-    else:
+    left = scan_list[:5]
+    right = scan_list[5:]
+    if left.count(2) > right.count(2) : 
         fc.turn_left(50)
+    elif left.count(2) < right.count(2) :
+        fc.turn_right(50)
+    else :
+        turnRight = random.randint(0,1)
+        if(turnRight):
+            fc.turn_right(50)
+        else:
+            fc.turn_left(50)
     turnTime = random.random() + 0.1
     time.sleep(turnTime)
     fc.stop()
@@ -29,7 +36,7 @@ def ObstacleAvoidance():
 
         print(scanList)
         if scanList[3:7] != [2,2,2,2]:
-            StopAndPickNewDirection()
+            StopAndPickNewDirection(scanlist)
             power = 0
         
         time.sleep(0.1)
