@@ -36,7 +36,7 @@ def ObstacleAvoidance():
 
         print(scanList)
         if scanList[3:7] != [2,2,2,2]:
-            StopAndPickNewDirection(scanlist)
+            StopAndPickNewDirection(scanList)
             power = 0
         
         time.sleep(0.1)
