@@ -26,7 +26,7 @@ def StopAndPickNewDirection(scan_list):
             fc.turn_left(50)
         print("random direction")
     #turnTime = random.random() + 0.1
-    turnTime = 0.5
+    turnTime = 2
     time.sleep(turnTime)
     fc.stop()
 
@@ -42,6 +42,7 @@ def ObstacleAvoidance():
         if scanList.count(0) > 0:
             fc.backward(20)
             time.sleep(0.5)
+            print("too close, backward")
             continue
         elif scanList[3:7] != [2,2,2,2]:
             StopAndPickNewDirection(scanList)
