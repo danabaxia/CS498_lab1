@@ -35,7 +35,7 @@ def ObstacleAvoidance():
     maxPower = 40
     while True:        
         scanList = fc.scan_step(35)
-        if not scanList:
+        if not scanList or len(scanList) != 10:
             continue
 
         print(scanList)
